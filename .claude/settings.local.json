@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "SlashCommand(/sp.specify:*)",
+      "Bash(npm run build:*)",
+      "Bash(rm -rf temp_target_repo)",
+      "Bash(git clone https://github.com/hamzashakoor119/Physical-AI-Humanoid-Robotics-Book-By-CodeWithHamza.git fresh_target_repo)",
+      "Bash(rsync -av --exclude='temp_target_repo' --exclude='fresh_target_repo' . ./fresh_target_repo/)",
+      "Bash(powershell -Command \"Get-ChildItem -Path . -Exclude ''temp_target_repo'', ''fresh_target_repo'', ''node_modules'', ''.git'', ''.docusaurus'', ''build'' | ForEach-Object { Copy-Item -Path $_Name -Destination ''fresh_target_repo'' -Recurse -Force }\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

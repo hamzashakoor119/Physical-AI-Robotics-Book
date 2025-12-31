@@ -1,0 +1,448 @@
+.chatToggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.chatToggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.chatWindow {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 380px;
+  height: 520px;
+  background: var(--ifm-background-color, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  border: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+}
+
+[data-theme='dark'] .chatWindow {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+.chatHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px 20px;
+}
+
+.chatHeader h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.languageToggle {
+  display: flex;
+  gap: 4px;
+}
+
+.streamToggle {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.streamToggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.streamToggle.activeStream {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.langButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.langButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.langButton.activeLang {
+  background: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+}
+
+.selectedTextBanner {
+  background: #fff3cd;
+  color: #856404;
+  padding: 8px 12px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-theme='dark'] .selectedTextBanner {
+  background: #3d3200;
+  color: #ffc107;
+}
+
+.selectedTextBanner button {
+  background: none;
+  border: none;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.selectionControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.strictModeToggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.strictModeToggle input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.toggleLabel {
+  color: inherit;
+  user-select: none;
+}
+
+.messagesContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.welcomeMessage {
+  text-align: center;
+  color: var(--ifm-color-emphasis-600, #666);
+  padding: 20px;
+}
+
+.welcomeMessage p {
+  margin: 8px 0;
+}
+
+.tip {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--ifm-color-emphasis-500, #888);
+}
+
+.message {
+  max-width: 85%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.userMessage {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.assistantMessage {
+  align-self: flex-start;
+  background: var(--ifm-color-emphasis-100, #f5f5f5);
+  color: var(--ifm-font-color-base, #333);
+  border-bottom-left-radius: 4px;
+}
+
+[data-theme='dark'] .assistantMessage {
+  background: #2d2d2d;
+  color: #e0e0e0;
+}
+
+.streaming {
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+  color: #667eea;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.typingIndicator span {
+  font-size: 13px;
+  color: var(--ifm-color-emphasis-500, #888);
+}
+
+.typingIndicator .dots {
+  display: flex;
+  gap: 4px;
+}
+
+.typingIndicator .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ifm-color-emphasis-400, #999);
+  animation: typing 1.4s infinite ease-in-out both;
+}
+
+.typingIndicator .dot:nth-child(1) { animation-delay: -0.32s; }
+.typingIndicator .dot:nth-child(2) { animation-delay: -0.16s; }
+.typingIndicator .dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.inputContainer {
+  display: flex;
+  padding: 12px 16px;
+  border-top: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+  gap: 8px;
+}
+
+[data-theme='dark'] .inputContainer {
+  border-top-color: #333;
+}
+
+.input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--ifm-color-emphasis-300, #ddd);
+  border-radius: 24px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--ifm-background-color, #fff);
+  color: var(--ifm-font-color-base, #333);
+}
+
+.input:focus {
+  border-color: #667eea;
+}
+
+[data-theme='dark'] .input {
+  background: #2d2d2d;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+.sendButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.2s;
+}
+
+.sendButton:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.sendButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stopButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.2s;
+}
+
+.stopButton:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Feature 1: Floating "Ask AI" Popup */
+.askAiPopup {
+  animation: popupFadeIn 0.2s ease-out;
+}
+
+.askAiButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.askAiButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+}
+
+.askAiButton:active {
+  transform: scale(0.98);
+}
+
+.askAiButton svg {
+  flex-shrink: 0;
+}
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -90%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+  }
+}
+
+/* Feature 3: Queue Indicator */
+.queueIndicator {
+  background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+  border: 1px solid #667eea40;
+  color: #667eea;
+  padding: 6px 12px;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 500;
+  animation: pulse 2s infinite;
+}
+
+[data-theme='dark'] .queueIndicator {
+  background: rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.3);
+  color: #a5b4fc;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatWindow {
+    width: calc(100vw - 32px);
+    height: calc(100vh - 120px);
+    bottom: 80px;
+    right: 16px;
+  }
+
+  .chatToggle {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .askAiButton {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

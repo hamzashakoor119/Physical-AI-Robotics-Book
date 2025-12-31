@@ -1,0 +1,45 @@
+.authContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userEmail {
+  font-size: 13px;
+  color: var(--ifm-font-color-secondary);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.loginButton {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.loginButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.logoutButton {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+  padding: 6px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  background-color: var(--ifm-color-emphasis-300);
+}

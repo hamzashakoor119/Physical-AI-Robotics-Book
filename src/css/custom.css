@@ -1,0 +1,345 @@
+/**
+ * Physical AI & Humanoid Robotics Textbook
+ * Clean Professional Theme
+ */
+
+/* ========================================
+   LIGHT MODE
+   ======================================== */
+:root {
+  /* Primary - Deep Blue (Professional) */
+  --ifm-color-primary: #1e40af;
+  --ifm-color-primary-dark: #1e3a8a;
+  --ifm-color-primary-darker: #1e3a8a;
+  --ifm-color-primary-darkest: #172554;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+
+  /* Accent - Orange */
+  --ifm-color-accent: #f97316;
+  --ifm-color-accent-light: #fb923c;
+
+  /* Backgrounds */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8fafc;
+
+  /* Text */
+  --ifm-font-color-base: #0f172a;
+  --ifm-font-color-secondary: #475569;
+
+  /* Layout */
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Code */
+  --docusaurus-highlighted-code-line-bg: rgba(30, 64, 175, 0.08);
+
+  /* Footer */
+  --ifm-footer-background-color: #0f172a;
+  --ifm-footer-color: #e2e8f0;
+  --ifm-footer-link-color: #94a3b8;
+  --ifm-footer-title-color: #ffffff;
+}
+
+/* ========================================
+   DARK MODE
+   ======================================== */
+[data-theme='dark'] {
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
+
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: #1e293b;
+
+  --ifm-font-color-base: #f1f5f9;
+  --ifm-font-color-secondary: #94a3b8;
+
+  --docusaurus-highlighted-code-line-bg: rgba(96, 165, 250, 0.15);
+
+  --ifm-footer-background-color: #020617;
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.navbar {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar__title {
+  font-weight: 700;
+}
+
+.navbar__link--active {
+  font-weight: 600;
+}
+
+[data-theme='dark'] .navbar {
+  background: #0f172a;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero--primary {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+  position: relative;
+}
+
+.hero--primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f97316, #fb923c, #f97316);
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero__subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 1.75rem;
+  }
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.button {
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.button--secondary {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1e40af;
+  border: none;
+}
+
+.button--secondary:hover {
+  background: #ffffff;
+  color: #1e3a8a;
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  background: #f97316;
+  border: none;
+}
+
+.button--primary:hover {
+  background: #ea580c;
+}
+
+/* ========================================
+   FEATURES SECTION
+   ======================================== */
+.features {
+  background: #f8fafc;
+  padding: 3rem 0;
+}
+
+[data-theme='dark'] .features {
+  background: #1e293b;
+}
+
+.features h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  color: #0f172a;
+}
+
+[data-theme='dark'] .features h3 {
+  color: #f1f5f9;
+}
+
+.features p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+[data-theme='dark'] .features p {
+  color: #94a3b8;
+}
+
+/* ========================================
+   SIDEBAR
+   ======================================== */
+.menu__link {
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.menu__link--active {
+  background: rgba(30, 64, 175, 0.1);
+  font-weight: 600;
+}
+
+[data-theme='dark'] .menu__link--active {
+  background: rgba(96, 165, 250, 0.15);
+}
+
+/* ========================================
+   CONTENT
+   ======================================== */
+article h1, article h2, article h3 {
+  font-weight: 700;
+}
+
+/* Inline Code */
+:not(pre) > code {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+}
+
+[data-theme='dark'] :not(pre) > code {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+/* Code Blocks */
+pre {
+  border-radius: 8px;
+}
+
+/* ========================================
+   FOOTER - PROFESSIONAL DARK
+   ======================================== */
+.footer {
+  background: #0f172a;
+  padding: 3rem 0 2rem;
+}
+
+.footer--dark {
+  background: #0f172a;
+}
+
+[data-theme='dark'] .footer {
+  background: #020617;
+  border-top: 1px solid #1e293b;
+}
+
+.footer__title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.footer__link-item {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+
+.footer__link-item:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer__links {
+  margin-bottom: 2rem;
+}
+
+.footer__bottom {
+  border-top: 1px solid #1e293b;
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer__copyright {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+/* Footer columns spacing */
+.footer .col {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 997px) {
+  .footer .col {
+    margin-bottom: 0;
+  }
+}
+
+/* ========================================
+   TABLE OF CONTENTS
+   ======================================== */
+.table-of-contents__link--active {
+  font-weight: 600;
+}
+
+/* ========================================
+   PAGINATION
+   ======================================== */
+.pagination-nav__link {
+  border-radius: 8px;
+  transition: border-color 0.15s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.pagination-nav__label {
+  font-weight: 600;
+}
+
+/* ========================================
+   ADMONITIONS
+   ======================================== */
+.admonition {
+  border-radius: 8px;
+}
+
+/* ========================================
+   TABS
+   ======================================== */
+.tabs__item--active {
+  font-weight: 600;
+}
+
+/* ========================================
+   MISC
+   ======================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
