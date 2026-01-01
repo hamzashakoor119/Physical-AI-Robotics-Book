@@ -42,7 +42,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/hamzashakoor119/Physical-AI-Humanoid-Robotics-Book-By-CodeWithHamza/tree/main/',
+          editUrl: 'https://github.com/hamzashakoor119/Physical-AI-Robotics-Book/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -50,7 +50,7 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl: 'https://github.com/hamzashakoor119/Physical-AI-Humanoid-Robotics-Book-By-CodeWithHamza/tree/main/',
+          editUrl: 'https://github.com/hamzashakoor119/Physical-AI-Robotics-Book/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -88,7 +88,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/hamzashakoor119/Physical-AI-Humanoid-Robotics-Book-By-CodeWithHamza',
+          href: 'https://github.com/hamzashakoor119/Physical-AI-Robotics-Book',
           label: 'GitHub',
           position: 'right',
         },
@@ -136,7 +136,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/hamzashakoor119/Physical-AI-Humanoid-Robotics-Book-By-CodeWithHamza',
+              href: 'https://github.com/hamzashakoor119/Physical-AI-Robotics-Book',
             },
             {
               label: 'GIAIC',
