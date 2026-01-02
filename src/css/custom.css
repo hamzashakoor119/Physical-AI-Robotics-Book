@@ -69,27 +69,42 @@
    NAVBAR
    ======================================== */
 .navbar {
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
 }
 
 .navbar__title {
   font-weight: 700;
+  color: white !important;
+}
+
+.navbar__link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar__link:hover {
+  color: white !important;
 }
 
 .navbar__link--active {
   font-weight: 600;
+  color: white !important;
+}
+
+.navbar__logo {
+  filter: brightness(0) invert(1);
 }
 
 [data-theme='dark'] .navbar {
-  background: #0f172a;
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
 }
 
 /* ========================================
    HERO SECTION
    ======================================== */
 .hero--primary {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
 }
 
