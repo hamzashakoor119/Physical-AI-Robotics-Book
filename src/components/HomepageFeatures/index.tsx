@@ -76,12 +76,13 @@ function BackendStatusPill({
           display: 'inline-flex',
           alignItems: 'center',
           gap: 8,
-          padding: '8px 12px',
+          padding: '8px 16px',
           borderRadius: 999,
-          border: '1px solid rgba(0,0,0,0.12)',
-          background: 'rgba(255,255,255,0.75)',
+          border: '1px solid rgba(255,255,255,0.3)',
+          background: 'rgba(255,255,255,0.15)',
           backdropFilter: 'blur(6px)',
           fontSize: 13,
+          color: 'white',
         }}>
         <span style={{fontWeight: 600}}>Backend:</span>
         {connected ? (
@@ -97,7 +98,7 @@ function BackendStatusPill({
             href={`${backendUrl}/api/health`}
             target="_blank"
             rel="noreferrer"
-            style={{marginLeft: 8, textDecoration: 'underline'}}>
+            style={{marginLeft: 8, textDecoration: 'underline', color: 'rgba(255,255,255,0.9)'}}>
             /api/health
           </a>
         ) : null}

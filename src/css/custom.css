@@ -174,32 +174,32 @@
    FEATURES SECTION
    ======================================== */
 .features {
-  background: #f8fafc;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 3rem 0;
 }
 
 [data-theme='dark'] .features {
-  background: #1e293b;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .features h3 {
   font-weight: 700;
   font-size: 1.25rem;
   margin-top: 1rem;
-  color: #0f172a;
+  color: #ffffff;
 }
 
 [data-theme='dark'] .features h3 {
-  color: #f1f5f9;
+  color: #ffffff;
 }
 
 .features p {
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
 }
 
 [data-theme='dark'] .features p {
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* ========================================
