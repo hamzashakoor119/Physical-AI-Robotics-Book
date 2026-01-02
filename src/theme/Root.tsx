@@ -99,22 +99,24 @@ function AuthButtonInNavbar() {
           <>
             <span style={{
               fontSize: '13px',
-              color: 'var(--ifm-font-color-secondary)',
+              color: '#1a1a2e',
               marginRight: '10px',
-              whiteSpace: 'nowrap'
+              whiteSpace: 'nowrap',
+              fontWeight: 500
             }}>
               {userEmail}
             </span>
             <button
               onClick={handleLogout}
               style={{
-                backgroundColor: 'var(--ifm-color-emphasis-200)',
-                color: 'var(--ifm-color-emphasis-800)',
+                backgroundColor: '#1a1a2e',
+                color: '#65DA00',
                 padding: '6px 12px',
-                border: '1px solid var(--ifm-color-emphasis-300)',
+                border: '2px solid #1a1a2e',
                 borderRadius: '6px',
                 fontSize: '13px',
                 cursor: 'pointer',
+                fontWeight: 600
               }}
             >
               Logout
@@ -124,10 +126,10 @@ function AuthButtonInNavbar() {
           <button
             onClick={() => setIsAuthModalOpen(true)}
             style={{
-              backgroundColor: 'var(--ifm-color-primary)',
-              color: 'white',
+              backgroundColor: '#1a1a2e',
+              color: '#65DA00',
               padding: '8px 16px',
-              border: 'none',
+              border: '2px solid #1a1a2e',
               borderRadius: '6px',
               fontSize: '14px',
               fontWeight: 600,
