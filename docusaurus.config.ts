@@ -11,7 +11,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://your-vercel-project-url.vercel.app', // Replace with your actual Vercel URL after deployment
+  url: 'https://physical-ai-robotics-book-sepia.vercel.app',
   baseUrl: '/',
 
   organizationName: 'hamzashakoor119',
