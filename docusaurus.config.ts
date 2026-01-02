@@ -70,11 +70,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Physical AI Book',
-      logo: {
-        alt: 'Physical AI Logo',
-        src: '/img/logo.png',
-      },
+      title: 'CodeWithHamza',
       items: [
         {
           type: 'docSidebar',

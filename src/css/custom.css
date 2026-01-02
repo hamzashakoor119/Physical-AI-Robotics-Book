@@ -69,36 +69,43 @@
    NAVBAR
    ======================================== */
 .navbar {
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  border-bottom: 2px solid #65DA00;
+  background: linear-gradient(135deg, #65DA00 0%, #4CAF00 100%);
+  box-shadow: 0 4px 16px rgba(101, 218, 0, 0.3);
 }
 
 .navbar__title {
-  font-weight: 700;
-  color: #65DA00 !important;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #1a1a2e !important;
+  letter-spacing: -0.5px;
+  text-transform: none;
 }
 
 .navbar__link {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #1a1a2e !important;
+  font-weight: 500;
 }
 
 .navbar__link:hover {
-  color: #65DA00 !important;
+  color: #000000 !important;
 }
 
 .navbar__link--active {
-  font-weight: 600;
-  color: #65DA00 !important;
-}
-
-.navbar__logo {
-  filter: none;
+  font-weight: 700;
+  color: #000000 !important;
 }
 
 [data-theme='dark'] .navbar {
-  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #65DA00 0%, #4CAF00 100%);
+  box-shadow: 0 4px 16px rgba(101, 218, 0, 0.4);
+}
+
+[data-theme='dark'] .navbar__title {
+  color: #1a1a2e !important;
+}
+
+[data-theme='dark'] .navbar__link {
+  color: #1a1a2e !important;
 }
 
 /* ========================================
