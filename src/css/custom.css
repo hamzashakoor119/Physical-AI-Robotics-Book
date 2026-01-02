@@ -1,81 +1,82 @@
 /**
  * Physical AI & Humanoid Robotics Textbook
- * Clean Professional Theme
+ * Professional Green Theme (#65DA00)
  */
 
 /* ========================================
    LIGHT MODE
    ======================================== */
 :root {
-  /* Primary - Deep Blue (Professional) */
-  --ifm-color-primary: #1e40af;
-  --ifm-color-primary-dark: #1e3a8a;
-  --ifm-color-primary-darker: #1e3a8a;
-  --ifm-color-primary-darkest: #172554;
-  --ifm-color-primary-light: #3b82f6;
-  --ifm-color-primary-lighter: #60a5fa;
-  --ifm-color-primary-lightest: #93c5fd;
+  /* Primary - Vibrant Green */
+  --ifm-color-primary: #65DA00;
+  --ifm-color-primary-dark: #4CAF00;
+  --ifm-color-primary-darker: #3D8C00;
+  --ifm-color-primary-darkest: #2D6600;
+  --ifm-color-primary-light: #7DE622;
+  --ifm-color-primary-lighter: #9BEF55;
+  --ifm-color-primary-lightest: #C4F79A;
 
-  /* Accent - Orange */
-  --ifm-color-accent: #f97316;
-  --ifm-color-accent-light: #fb923c;
+  /* Accent - Dark Slate */
+  --ifm-color-accent: #1a1a2e;
+  --ifm-color-accent-light: #2d2d44;
 
   /* Backgrounds */
   --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #f8fafc;
+  --ifm-background-surface-color: #f8faf5;
 
   /* Text */
-  --ifm-font-color-base: #0f172a;
-  --ifm-font-color-secondary: #475569;
+  --ifm-font-color-base: #1a1a2e;
+  --ifm-font-color-secondary: #4a5568;
 
   /* Layout */
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   /* Code */
-  --docusaurus-highlighted-code-line-bg: rgba(30, 64, 175, 0.08);
+  --docusaurus-highlighted-code-line-bg: rgba(101, 218, 0, 0.1);
 
   /* Footer */
-  --ifm-footer-background-color: #0f172a;
+  --ifm-footer-background-color: #1a1a2e;
   --ifm-footer-color: #e2e8f0;
   --ifm-footer-link-color: #94a3b8;
-  --ifm-footer-title-color: #ffffff;
+  --ifm-footer-title-color: #65DA00;
 }
 
 /* ========================================
    DARK MODE
    ======================================== */
 [data-theme='dark'] {
-  --ifm-color-primary: #60a5fa;
-  --ifm-color-primary-dark: #3b82f6;
-  --ifm-color-primary-darker: #2563eb;
-  --ifm-color-primary-darkest: #1d4ed8;
-  --ifm-color-primary-light: #93c5fd;
-  --ifm-color-primary-lighter: #bfdbfe;
-  --ifm-color-primary-lightest: #dbeafe;
+  --ifm-color-primary: #7DE622;
+  --ifm-color-primary-dark: #65DA00;
+  --ifm-color-primary-darker: #4CAF00;
+  --ifm-color-primary-darkest: #3D8C00;
+  --ifm-color-primary-light: #9BEF55;
+  --ifm-color-primary-lighter: #B8F57A;
+  --ifm-color-primary-lightest: #D4FAA8;
 
-  --ifm-background-color: #0f172a;
-  --ifm-background-surface-color: #1e293b;
+  --ifm-background-color: #0f0f1a;
+  --ifm-background-surface-color: #1a1a2e;
 
   --ifm-font-color-base: #f1f5f9;
   --ifm-font-color-secondary: #94a3b8;
 
-  --docusaurus-highlighted-code-line-bg: rgba(96, 165, 250, 0.15);
+  --docusaurus-highlighted-code-line-bg: rgba(101, 218, 0, 0.15);
 
-  --ifm-footer-background-color: #020617;
+  --ifm-footer-background-color: #0a0a12;
 }
 
 /* ========================================
    NAVBAR
    ======================================== */
 .navbar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 2px solid #65DA00;
 }
 
 .navbar__title {
   font-weight: 700;
-  color: white !important;
+  color: #65DA00 !important;
 }
 
 .navbar__link {
@@ -83,28 +84,28 @@
 }
 
 .navbar__link:hover {
-  color: white !important;
+  color: #65DA00 !important;
 }
 
 .navbar__link--active {
   font-weight: 600;
-  color: white !important;
+  color: #65DA00 !important;
 }
 
 .navbar__logo {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 [data-theme='dark'] .navbar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ========================================
    HERO SECTION
    ======================================== */
 .hero--primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
   position: relative;
 }
 
@@ -115,7 +116,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #f97316, #fb923c, #f97316);
+  background: linear-gradient(90deg, #65DA00, #7DE622, #65DA00);
 }
 
 .hero__title {
@@ -150,56 +151,58 @@
 }
 
 .button--secondary {
-  background: rgba(255, 255, 255, 0.95);
-  color: #1e40af;
+  background: #65DA00;
+  color: #1a1a2e;
   border: none;
 }
 
 .button--secondary:hover {
-  background: #ffffff;
-  color: #1e3a8a;
+  background: #7DE622;
+  color: #1a1a2e;
   transform: translateY(-1px);
 }
 
 .button--primary {
-  background: #f97316;
+  background: #65DA00;
+  color: #1a1a2e;
   border: none;
 }
 
 .button--primary:hover {
-  background: #ea580c;
+  background: #4CAF00;
+  color: white;
 }
 
 /* ========================================
    FEATURES SECTION
    ======================================== */
 .features {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
   padding: 3rem 0;
 }
 
 [data-theme='dark'] .features {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
 }
 
 .features h3 {
   font-weight: 700;
   font-size: 1.25rem;
   margin-top: 1rem;
-  color: #ffffff;
+  color: #65DA00;
 }
 
 [data-theme='dark'] .features h3 {
-  color: #ffffff;
+  color: #7DE622;
 }
 
 .features p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
 }
 
 [data-theme='dark'] .features p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ========================================
@@ -211,12 +214,14 @@
 }
 
 .menu__link--active {
-  background: rgba(30, 64, 175, 0.1);
+  background: rgba(101, 218, 0, 0.1);
   font-weight: 600;
+  color: #4CAF00;
 }
 
 [data-theme='dark'] .menu__link--active {
-  background: rgba(96, 165, 250, 0.15);
+  background: rgba(101, 218, 0, 0.15);
+  color: #7DE622;
 }
 
 /* ========================================
@@ -228,16 +233,16 @@ article h1, article h2, article h3 {
 
 /* Inline Code */
 :not(pre) > code {
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
+  background: #f0fde8;
+  border: 1px solid #c4f79a;
   border-radius: 4px;
   padding: 0.15em 0.4em;
   font-size: 0.9em;
 }
 
 [data-theme='dark'] :not(pre) > code {
-  background: #1e293b;
-  border-color: #334155;
+  background: #1a2e1a;
+  border-color: #2d5a2d;
 }
 
 /* Code Blocks */
@@ -249,21 +254,22 @@ pre {
    FOOTER - PROFESSIONAL DARK
    ======================================== */
 .footer {
-  background: #0f172a;
+  background: #1a1a2e;
   padding: 3rem 0 2rem;
+  border-top: 2px solid #65DA00;
 }
 
 .footer--dark {
-  background: #0f172a;
+  background: #1a1a2e;
 }
 
 [data-theme='dark'] .footer {
-  background: #020617;
-  border-top: 1px solid #1e293b;
+  background: #0a0a12;
+  border-top: 2px solid #65DA00;
 }
 
 .footer__title {
-  color: #ffffff;
+  color: #65DA00;
   font-weight: 700;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -278,7 +284,7 @@ pre {
 }
 
 .footer__link-item:hover {
-  color: #ffffff;
+  color: #65DA00;
   text-decoration: none;
 }
 
@@ -287,7 +293,7 @@ pre {
 }
 
 .footer__bottom {
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid #2d2d44;
   padding-top: 1.5rem;
   margin-top: 1rem;
 }
@@ -313,6 +319,7 @@ pre {
    ======================================== */
 .table-of-contents__link--active {
   font-weight: 600;
+  color: #65DA00;
 }
 
 /* ========================================
@@ -324,7 +331,7 @@ pre {
 }
 
 .pagination-nav__link:hover {
-  border-color: var(--ifm-color-primary);
+  border-color: #65DA00;
 }
 
 .pagination-nav__label {
@@ -343,6 +350,7 @@ pre {
    ======================================== */
 .tabs__item--active {
   font-weight: 600;
+  border-bottom-color: #65DA00;
 }
 
 /* ========================================
@@ -355,6 +363,23 @@ html {
 /* Focus states for accessibility */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
+  outline: 2px solid #65DA00;
   outline-offset: 2px;
+}
+
+/* Links */
+a {
+  color: #4CAF00;
+}
+
+a:hover {
+  color: #65DA00;
+}
+
+[data-theme='dark'] a {
+  color: #7DE622;
+}
+
+[data-theme='dark'] a:hover {
+  color: #9BEF55;
 }

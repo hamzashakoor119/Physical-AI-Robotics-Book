@@ -78,8 +78,8 @@ function BackendStatusPill({
           gap: 8,
           padding: '8px 16px',
           borderRadius: 999,
-          border: '1px solid rgba(255,255,255,0.3)',
-          background: 'rgba(255,255,255,0.15)',
+          border: '1px solid rgba(101, 218, 0, 0.5)',
+          background: 'rgba(101, 218, 0, 0.1)',
           backdropFilter: 'blur(6px)',
           fontSize: 13,
           color: 'white',
@@ -98,7 +98,7 @@ function BackendStatusPill({
             href={`${backendUrl}/api/health`}
             target="_blank"
             rel="noreferrer"
-            style={{marginLeft: 8, textDecoration: 'underline', color: 'rgba(255,255,255,0.9)'}}>
+            style={{marginLeft: 8, textDecoration: 'underline', color: '#65DA00'}}>
             /api/health
           </a>
         ) : null}
