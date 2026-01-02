@@ -1,0 +1,182 @@
+.navbar {
+  background: linear-gradient(135deg, #65DA00 0%, #4CAF00 100%);
+  box-shadow: 0 4px 20px rgba(101, 218, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.navbar:hover::before {
+  left: 100%;
+}
+
+.navbarContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1a1a2e;
+  font-weight: 800;
+}
+
+.logoIcon {
+  font-size: 2rem;
+}
+
+.brandText {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.navItems {
+  display: flex;
+  gap: 2rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #1a1a2e;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.navItem:hover {
+  background: rgba(26, 26, 46, 0.1);
+}
+
+.navIcon {
+  font-size: 1.2rem;
+}
+
+.navLabel {
+  position: relative;
+  z-index: 1;
+}
+
+.navUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #1a1a2e;
+  border-radius: 2px 2px 0 0;
+}
+
+/* Search bar */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(26, 26, 46, 0.1);
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.searchBar:focus-within {
+  border-color: #1a1a2e;
+}
+
+.searchBar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+  width: 100%;
+}
+
+.searchBar input::placeholder {
+  color: rgba(26, 26, 46, 0.6);
+}
+
+/* Theme toggle */
+.themeToggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(26, 26, 46, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* Mobile menu button */
+.mobileMenuBtn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobileMenuBtn span {
+  width: 24px;
+  height: 2px;
+  background: #1a1a2e;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navItems {
+    display: none;
+  }
+
+  .searchBar {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+  }
+
+  .brandText {
+    font-size: 1.2rem;
+  }
+
+  .navbarContent {
+    padding: 0.75rem 1rem;
+  }
+}

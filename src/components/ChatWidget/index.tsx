@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './styles.module.css';
 
 interface Message {
@@ -431,10 +432,16 @@ export default function ChatWidget({ apiEndpoint }: ChatWidgetProps): React.Reac
       )}
 
       {/* Chat Toggle Button */}
-      <button
+      <motion.button
         className={styles.chatToggle}
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? 'Close chat' : 'Open chat'}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        animate={{
+          rotate: isOpen ? 90 : 0,
+        }}
+        transition={{ duration: 0.2 }}
       >
         {isOpen ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -446,12 +453,19 @@ export default function ChatWidget({ apiEndpoint }: ChatWidgetProps): React.Reac
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
         )}
-      </button>
+      </motion.button>
 
       {/* Chat Window */}
-      {isOpen && (
-        <div className={styles.chatWindow}>
-          <div className={styles.chatHeader}>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className={styles.chatWindow}
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+          >
+            <div className={styles.chatHeader}>
             <h3>Physical AI Assistant</h3>
             <span className={styles.subtitle}>Ask questions about the textbook</span>
             <div className={styles.headerControls}>
@@ -507,8 +521,11 @@ export default function ChatWidget({ apiEndpoint }: ChatWidgetProps): React.Reac
               </div>
             )}
             {messages.map((msg, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                 className={`${styles.message} ${msg.role === 'user' ? styles.userMessage : styles.assistantMessage} ${msg.isStreaming ? styles.streaming : ''}`}
               >
                 {msg.content || (msg.isStreaming && (
@@ -517,7 +534,7 @@ export default function ChatWidget({ apiEndpoint }: ChatWidgetProps): React.Reac
                 {msg.isStreaming && msg.content && (
                   <span className={styles.cursor}>▌</span>
                 )}
-              </div>
+              </motion.div>
             ))}
             {isLoading && !isStreaming && (
               <div className={styles.message + ' ' + styles.assistantMessage}>
@@ -536,13 +553,18 @@ export default function ChatWidget({ apiEndpoint }: ChatWidgetProps): React.Reac
 
           {/* Feature 3: Queue indicator */}
           {messageQueue.length > 0 && (
-            <div className={styles.queueIndicator}>
+            <motion.div
+              className={styles.queueIndicator}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+            >
               {messageQueue.length} message{messageQueue.length > 1 ? 's' : ''} queued
-            </div>
+            </motion.div>
           )}
 
           <form onSubmit={handleSubmit} className={styles.inputContainer}>
-            <input
+            <motion.input
               ref={inputRef}
               type="text"
               value={input}
@@ -556,16 +578,30 @@ export default function ChatWidget({ apiEndpoint }: ChatWidgetProps): React.Reac
                   : "Say hi or ask a question..."
               }
               className={styles.input}
-              /* Feature 3: Input is NEVER disabled - messages get queued */
+              whileFocus={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 400 }}
             />
             {isStreaming ? (
-              <button type="button" onClick={stopStreaming} className={styles.stopButton} title="Stop generating">
+              <motion.button
+                type="button"
+                onClick={stopStreaming}
+                className={styles.stopButton}
+                title="Stop generating"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <rect x="6" y="6" width="12" height="12" rx="2" />
                 </svg>
-              </button>
+              </motion.button>
             ) : (
-              <button type="submit" disabled={!input.trim() || isLoading} className={styles.sendButton}>
+              <motion.button
+                type="submit"
+                disabled={!input.trim() || isLoading}
+                className={styles.sendButton}
+                whileHover={!input.trim() || isLoading ? {} : { scale: 1.05 }}
+                whileTap={!input.trim() || isLoading ? {} : { scale: 0.95 }}
+              >
                 {isLoading ? (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.spinner}>
                     <circle cx="12" cy="12" r="10" strokeDasharray="31.4 31.4" strokeLinecap="round"></circle>
@@ -576,11 +612,12 @@ export default function ChatWidget({ apiEndpoint }: ChatWidgetProps): React.Reac
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                   </svg>
                 )}
-              </button>
+              </motion.button>
             )}
           </form>
-        </div>
+        </motion.div>
       )}
+    </AnimatePresence>
     </>
   );
 }

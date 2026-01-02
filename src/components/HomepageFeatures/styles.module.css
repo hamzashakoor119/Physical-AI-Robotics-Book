@@ -1,26 +1,227 @@
+/* ========================================
+   FEATURES SECTION - REDESIGNED
+   ======================================== */
 .features {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+  position: relative;
+}
+
+/* Section header */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Backend status indicator */
+.backendStatus {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(101, 218, 0, 0.2);
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #65DA00;
+}
+
+.statusText {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.statusPulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #65DA00;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(101, 218, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(101, 218, 0, 0);
+  }
+}
+
+/* Features grid */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureLink {
+  text-decoration: none;
+  display: block;
+}
+
+.featureLink:hover .featureCard {
+  transform: translateY(-8px);
+  border-color: rgba(101, 218, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.featureLink:hover .featureIcon {
+  transform: scale(1.1);
+  background: rgba(101, 218, 0, 0.15);
+}
+
+.featureLink:hover .featureIcon svg {
+  color: #7DE622;
+}
+
+.featureCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #65DA00, #7DE622);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featureLink:hover .featureCard::before {
+  opacity: 1;
+}
+
+.featureIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: rgba(101, 218, 0, 0.08);
   display: flex;
   align-items: center;
-  padding: 3rem 0;
-  width: 100%;
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
-  color: white;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featureIcon svg {
+  width: 40px;
+  height: 40px;
+  color: #65DA00;
+  transition: color 0.3s ease;
 }
 
-.featureImg {
-  height: 200px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+.featureTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
-.featureImg:hover {
-  transform: scale(1.05);
+.featureDesc {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media screen and (max-width: 1200px) {
+  .featuresGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .features {
+    padding: 4rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .features {
+    padding: 3rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .featureCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .featureIcon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .featureIcon svg {
+    width: 35px;
+    height: 35px;
+  }
 }

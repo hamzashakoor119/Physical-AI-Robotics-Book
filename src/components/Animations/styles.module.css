@@ -1,0 +1,58 @@
+.featureCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #65DA00, #7DE622, #65DA00);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+  animation: gradientShift 3s linear infinite;
+}
+
+.featureCard:hover {
+  background: rgba(101, 218, 0, 0.08);
+  border-color: rgba(101, 218, 0, 0.2);
+  box-shadow: 0 12px 40px rgba(101, 218, 0, 0.15);
+}
+
+.iconContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(101, 218, 0, 0.1);
+  margin-bottom: 1.5rem;
+  color: #65DA00;
+}
+
+.iconContainer svg {
+  width: 40px;
+  height: 40px;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

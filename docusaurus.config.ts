@@ -65,60 +65,79 @@ const config: Config = {
   themeConfig: {
     image: 'img/social-card.jpg',
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: 'dark',
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'CodeWithHamza',
+      logo: {
+        alt: 'Physical AI Logo',
+        src: 'img/favicon.ico',
+        width: 32,
+        height: 32,
+      },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Chapters',
+          label: '📖 Chapters',
         },
         {
           to: '/blog',
-          label: 'Blog',
+          label: '✍️ Blog',
           position: 'left',
         },
         {
+          type: 'docsVersionDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/hamzashakoor119/Physical-AI-Robotics-Book',
-          label: 'GitHub',
+          label: '⭐ GitHub',
           position: 'right',
         },
       ],
+      hideOnScroll: false,
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Content',
+          title: '📚 Learning Path',
           items: [
             {
-              label: 'Introduction to Physical AI',
+              label: 'Chapter 1: Introduction',
               to: '/docs/ch1-intro-physical-ai',
             },
             {
-              label: 'Sensors',
+              label: 'Chapter 2: Sensors',
               to: '/docs/ch2-sensors-physical-ai',
             },
             {
-              label: 'Actuators',
+              label: 'Chapter 3: Actuators',
               to: '/docs/ch3-actuators-physical-ai',
+            },
+            {
+              label: 'Chapter 4: Control Systems',
+              to: '/docs/ch4-control-systems',
             },
           ],
         },
         {
-          title: 'Advanced Topics',
+          title: '🚀 Advanced Topics',
           items: [
             {
               label: 'ROS2 Fundamentals',
               to: '/docs/ch5-ros2-fundamentals',
             },
             {
-              label: 'NVIDIA Isaac',
+              label: 'Digital Twin & Simulation',
+              to: '/docs/ch6-digital-twin-simulation',
+            },
+            {
+              label: 'NVIDIA Isaac Sim',
               to: '/docs/ch7-nvidia-isaac',
             },
             {
@@ -128,29 +147,55 @@ const config: Config = {
           ],
         },
         {
-          title: 'Community',
+          title: '💻 Resources',
           items: [
             {
-              label: 'GitHub',
+              label: 'Python Code Examples',
+              to: '/docs/ch1-intro-physical-ai',
+            },
+            {
+              label: 'Exercise Questions',
+              to: '/docs/ch1-intro-physical-ai',
+            },
+            {
+              label: 'AI Assistant',
+              to: '/docs/ch1-intro-physical-ai',
+            },
+          ],
+        },
+        {
+          title: '🌐 Community',
+          items: [
+            {
+              label: 'GitHub Repository',
               href: 'https://github.com/hamzashakoor119/Physical-AI-Robotics-Book',
             },
             {
-              label: 'GIAIC',
+              label: 'GIAIC Official',
               href: 'https://www.piaic.org/',
+            },
+            {
+              label: 'Report Issues',
+              href: 'https://github.com/hamzashakoor119/Physical-AI-Robotics-Book/issues',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Physical AI Book by CodeWithHamza. Built for GIAIC Hackathon.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI Book by CodeWithHamza. Built with ❤️ for the robotics community.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['python', 'bash', 'yaml', 'json'],
+      additionalLanguages: ['python', 'bash', 'yaml', 'json', 'markdown'],
     },
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
+    },
+    algolia: {
+      appId: 'YOUR_APP_ID',
+      apiKey: 'YOUR_SEARCH_API_KEY',
+      indexName: 'physical_ai_book',
     },
   } satisfies Preset.ThemeConfig,
 };
