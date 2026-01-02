@@ -62,6 +62,19 @@ const config: Config = {
     ],
   ],
 
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        hashed: true,
+        language: ["en"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      }),
+    ],
+  ],
+
   themeConfig: {
     image: 'img/social-card.jpg',
     colorMode: {
@@ -88,6 +101,10 @@ const config: Config = {
           to: '/blog',
           label: '✍️ Blog',
           position: 'left',
+        },
+        {
+          type: 'search',
+          position: 'right',
         },
         {
           type: 'docsVersionDropdown',
@@ -191,11 +208,6 @@ const config: Config = {
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
-    },
-    algolia: {
-      appId: 'YOUR_APP_ID',
-      apiKey: 'YOUR_SEARCH_API_KEY',
-      indexName: 'physical_ai_book',
     },
   } satisfies Preset.ThemeConfig,
 };
