@@ -3,32 +3,87 @@
   flex-direction: column;
   gap: 0.75rem;
   margin: 1.5rem 0;
-  padding: 1rem;
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #7DE622 0%, #65DA00 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(101, 218, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated shimmer effect */
+.translateContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { left: -100%; }
+  50% { left: 100%; }
 }
 
 .translateButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: white;
-  color: #11998e;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: #1a1a2e;
+  color: #65DA00;
+  border: 2px solid #1a1a2e;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Ripple effect */
+.translateButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(101, 218, 0, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.translateButton:active::after {
+  width: 300px;
+  height: 300px;
+  opacity: 1;
+  transition: width 0s, height 0s, opacity 0s;
 }
 
 .translateButton:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(26, 26, 46, 0.4);
+  background: #2d2d44;
+  border-color: #65DA00;
+}
+
+.translateButton:active:not(:disabled) {
+  transform: translateY(-1px) scale(0.98);
 }
 
 .translateButton:disabled {
@@ -37,15 +92,15 @@
 }
 
 .icon {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .spinner {
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(17, 153, 142, 0.3);
-  border-top-color: #11998e;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(101, 218, 0, 0.3);
+  border-top-color: #65DA00;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -57,22 +112,26 @@
 .languageInfo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  color: white;
-  font-size: 0.9rem;
+  gap: 1rem;
+  color: #1a1a2e;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
 }
 
 .badge {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.25rem 0.75rem;
+  background: rgba(26, 26, 46, 0.15);
+  padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 1px solid rgba(26, 26, 46, 0.2);
 }
 
 .description {
-  font-weight: 500;
+  font-weight: 600;
   flex: 1;
+  opacity: 0.9;
 }
 
 /* Modal Styles */
@@ -82,116 +141,164 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(15, 15, 26, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 99999;
   padding: 1rem;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .modalContent {
-  background: white;
-  border-radius: 12px;
-  max-width: 800px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+  border-radius: 20px;
+  max-width: 900px;
   width: 100%;
-  max-height: 80vh;
+  max-height: 85vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(101, 218, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .modalHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-  color: white;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #7DE622 0%, #65DA00 100%);
+  color: #1a1a2e;
 }
 
 .modalHeader h3 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 800;
 }
 
 .closeButton {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(26, 26, 46, 0.2);
   border: none;
-  color: white;
+  color: #1a1a2e;
   font-size: 1.5rem;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 700;
 }
 
 .closeButton:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: rotate(90deg);
+  background: rgba(26, 26, 46, 0.3);
+  transform: rotate(90deg) scale(1.1);
 }
 
 .modalBody {
-  padding: 1.5rem;
+  padding: 2rem;
   overflow-y: auto;
   flex: 1;
 }
 
 .translationBadge {
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-  color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  background: linear-gradient(135deg, rgba(101, 218, 0, 0.15) 0%, rgba(101, 218, 0, 0.05) 100%);
+  border: 1px solid rgba(101, 218, 0, 0.3);
+  color: #7DE622;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.translationBadge strong {
+  color: #65DA00;
 }
 
 .contentPreview {
-  line-height: 1.8;
-  color: #333;
+  line-height: 2;
+  color: #e2e8f0;
   white-space: pre-wrap;
-  font-size: 1rem;
+  font-size: 1.1rem;
   direction: rtl;
   text-align: right;
-  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Times New Roman', serif;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .technicalNote {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  background: #f8f9fa;
-  border-left: 4px solid #11998e;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  color: #666;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(101, 218, 0, 0.08) 0%, rgba(101, 218, 0, 0.02) 100%);
+  border-left: 4px solid #65DA00;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.technicalNote strong {
+  color: #7DE622;
 }
 
 .modalFooter {
-  padding: 1rem 1.5rem;
-  border-top: 1px solid #eee;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(101, 218, 0, 0.1);
   display: flex;
   justify-content: flex-end;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .closeBtn {
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-  color: white;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #7DE622 0%, #65DA00 100%);
+  color: #1a1a2e;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .closeBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(17, 153, 142, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(101, 218, 0, 0.4);
+}
+
+.closeBtn:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 /* Responsive */
@@ -206,6 +313,15 @@
   }
 
   .contentPreview {
-    font-size: 0.95rem;
+    font-size: 1rem;
+  }
+
+  .translateButton {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .translateContainer {
+    padding: 1rem;
   }
 }
