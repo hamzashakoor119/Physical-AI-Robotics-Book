@@ -30,7 +30,7 @@ export default function PersonalizeButton({
       // Get current page content if not provided
       const content = chapterContent || document.querySelector('article')?.innerText || '';
 
-      const response = await fetch(`${baseUrl}personalization/personalize-chapter`, {
+      const response = await fetch(`${baseUrl}/personalization/personalize-chapter`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -26,7 +26,7 @@ export default function TranslateButton({
       // Get current page content if not provided
       const content = chapterContent || document.querySelector('article')?.innerText || '';
 
-      const response = await fetch(`${baseUrl}translate`, {
+      const response = await fetch(`${baseUrl}/translate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
