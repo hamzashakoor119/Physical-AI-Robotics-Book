@@ -109,10 +109,10 @@ function AuthButtonInNavbar() {
             <button
               onClick={handleLogout}
               style={{
-                backgroundColor: '#1a1a2e',
-                color: '#65DA00',
+                backgroundColor: '#65DA00',
+                color: '#ffffff',
                 padding: '6px 12px',
-                border: '2px solid #1a1a2e',
+                border: '2px solid #000000',
                 borderRadius: '6px',
                 fontSize: '13px',
                 cursor: 'pointer',
@@ -126,10 +126,10 @@ function AuthButtonInNavbar() {
           <button
             onClick={() => setIsAuthModalOpen(true)}
             style={{
-              backgroundColor: '#1a1a2e',
-              color: '#65DA00',
+              backgroundColor: '#65DA00',
+              color: '#ffffff',
               padding: '8px 16px',
-              border: '2px solid #1a1a2e',
+              border: '2px solid #000000',
               borderRadius: '6px',
               fontSize: '14px',
               fontWeight: 600,
